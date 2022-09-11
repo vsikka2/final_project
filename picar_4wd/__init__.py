@@ -155,28 +155,30 @@ def scan_step(ref):
 ########################################################
 # Motors
 def forward(power):
-    left_front.set_power(power)
-    left_rear.set_power(power)
-    right_front.set_power(power)
-    right_rear.set_power(power)
+    left_front.set_power(-power)
+    left_rear.set_power(-power)
+    right_front.set_power(-power)
+    right_rear.set_power(-power)
 
 def backward(power):
-    left_front.set_power(-power)
-    left_rear.set_power(-power)
+    left_front.set_power(power)
+    left_rear.set_power(power)
+    right_front.set_power(power)
+    right_rear.set_power(power)
+
+
+def turn_left(power):
+    left_front.set_power(power)
+    left_rear.set_power(power)
     right_front.set_power(-power)
     right_rear.set_power(-power)
 
-def turn_left(power):
+def turn_right(power):
     left_front.set_power(-power)
     left_rear.set_power(-power)
     right_front.set_power(power)
     right_rear.set_power(power)
 
-def turn_right(power):
-    left_front.set_power(power)
-    left_rear.set_power(power)
-    right_front.set_power(-power)
-    right_rear.set_power(-power)
 
 def stop():
     left_front.set_power(0)
