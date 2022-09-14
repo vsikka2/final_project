@@ -33,16 +33,6 @@ def main():
         print(scan_list)
         map = get_map_from_distances(scan_list)
         print(map)
-        break
-    fc.forward()
-    sleep(2)
-    fc.stop()
-    while True:
-        scan_list = fc.make_distance_list()
-        if not scan_list:
-            continue
-        print(scan_list)
-        break
     
 
         
