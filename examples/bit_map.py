@@ -12,7 +12,7 @@ def get_points_from_distances(distance):
         if(distance[i]> 0):
             x = distance[i]*np.sin(cur_angle*np.pi/180.0)+car[0]
             y = distance[i]*np.cos(cur_angle*np.pi/180.0)
-            points.append[(x,y)]
+            points.append((x,y))
         i+=1
         cur_angle+=angle_step
     return points
