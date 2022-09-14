@@ -152,6 +152,32 @@ def scan_step(ref):
     else:
         return False
 
+scan_list2=[]
+current_angle2=0
+camera_step=STEP
+def make_distance_list():
+    global scan_list2, current_angle2, camera_step
+    current_angle2 += camera_step
+    if current_angle2 >= max_angle:
+        current_angle2 = max_angle
+        camera_step = -STEP
+    elif current_angle2 <= min_angle:
+        current_angle2 = min_angle
+        camera_step = STEP
+    dist = get_distance_at(current_angle2)
+    
+    scan_list2.append(dist)
+    if current_angle2 == min_angle or current_angle2 == max_angle:
+        if camera_step < 0:
+            # print("reverse")
+            scan_list2.reverse()
+        # print(scan_list)
+        tmp = scan_list2.copy()
+        scan_list2 = []
+        return tmp
+    else:
+        return False
+
 ########################################################
 # Motors
 def forward(power):
