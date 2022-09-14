@@ -153,7 +153,7 @@ def scan_step(ref):
         return False
 
 scan_list2=[]
-current_angle2=0
+current_angle2=-95
 camera_step=1
 def make_distance_list():
     global scan_list2, current_angle2, camera_step
