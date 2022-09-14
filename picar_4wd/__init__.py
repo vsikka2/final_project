@@ -160,10 +160,10 @@ def make_distance_list():
     current_angle2 += camera_step
     if current_angle2 >= max_angle:
         current_angle2 = max_angle
-        camera_step = -STEP
+        camera_step = -camera_step
     elif current_angle2 <= min_angle:
         current_angle2 = min_angle
-        camera_step = STEP
+        camera_step = camera_step
     dist = get_distance_at(current_angle2)
     
     scan_list2.append(dist)
