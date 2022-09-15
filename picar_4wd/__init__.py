@@ -138,9 +138,10 @@ def scan_step(ref):
     elif current_angle <= min_angle:
         current_angle = min_angle
         us_step = STEP
-    status = get_status_at(current_angle, ref1=ref)#ref1
+    #status = get_status_at(current_angle, ref1=ref)#ref1
+    dist = get_distance_at(current_angle)
 
-    scan_list.append(status)
+    scan_list.append(dist)
     if current_angle == min_angle or current_angle == max_angle:
         if us_step < 0:
             # print("reverse")
