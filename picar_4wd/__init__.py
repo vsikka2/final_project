@@ -79,7 +79,7 @@ def get_line_status(ref,fl_list):#170<x<300
 ########################################################
 # Ultrasonic
 ANGLE_RANGE = 180
-STEP = 1
+STEP = 18
 us_step = STEP
 angle_distance = [0,0]
 current_angle = 0
@@ -153,8 +153,8 @@ def scan_step(ref):
         return False
 
 scan_list2=[]
-current_angle2=-95
-camera_step=1
+current_angle2=0
+camera_step=18
 def make_distance_list():
     global scan_list2, current_angle2, camera_step
     current_angle2 += camera_step
@@ -164,7 +164,7 @@ def make_distance_list():
     elif current_angle2 <= min_angle:
         current_angle2 = min_angle
         camera_step = camera_step
-    dist = get_distance_at(current_angle2)
+    dist = 5#get_distance_at(current_angle2)
     
     scan_list2.append(dist)
     if current_angle2 == min_angle or current_angle2 == max_angle:
