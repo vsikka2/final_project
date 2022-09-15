@@ -27,19 +27,27 @@ def get_map_from_distances(distance):
         point2 = points[i+1]
         xdif = np.abs(point1[0]-point2[0])
         ydif = np.abs(point1[1]-point2[1])
-        
+
         i+=1
     return map
 
 
 
 def main():
+    
     while True:
-        scan_list = fc.make_distance_list()
+        scan_list = fc.scan_step(35)
         if not scan_list:
             continue
+
         print(scan_list)
-        #map = get_map_from_distances(scan_list)
+        
+        
+        # scan_list = fc.make_distance_list()
+        # if not scan_list:
+        #     continue
+        # print(scan_list)
+        # #map = get_map_from_distances(scan_list)
         #print(map)
     
 
