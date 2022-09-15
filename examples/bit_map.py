@@ -36,13 +36,13 @@ def get_map_from_distances(distance):
 def main():
     
     while True:
-        scan_list = fc.make_distance_list()
+        scan_list = fc.scan_step(35)
         if not scan_list:
             continue
         break
         
     while True:        
-        scan_list = fc.make_distance_list()
+        scan_list = fc.scan_step(35)
         if not scan_list:
             continue
         print(scan_list)
