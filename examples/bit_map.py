@@ -41,11 +41,14 @@ def main():
             continue
         break
         
-    while True:        
-        scan_list = fc.scan_step(35)
-        if not scan_list:
-            continue
-        print(scan_list)
+    while True:
+        scan_map = []
+        for i in range(15,90,5):           
+            scan_list=[]
+            while(not scan_list):
+                scan_list = fc.scan_step(i)            
+            scan_map.append(scan_list)
+        print(scan_map)
         #map = get_map_from_distances(scan_list)
         #print(map)
     
