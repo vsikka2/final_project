@@ -122,6 +122,7 @@ def get_distance_at(angle):
 
 def get_status_at(angle, ref1=35, ref2=10):
     dist = get_distance_at(angle)
+    print(dist)
     if dist > ref1 or dist == -2:
         return 2
     elif dist > ref2:
@@ -138,9 +139,8 @@ def scan_step(ref):
     elif current_angle <= min_angle:
         current_angle = min_angle
         us_step = STEP
-    #status = get_status_at(current_angle, ref1=ref)#ref1
-    dist = get_distance_at(current_angle)
-
+    status = get_status_at(current_angle, ref1=ref)#ref1
+    
     scan_list.append(dist)
     if current_angle == min_angle or current_angle == max_angle:
         if us_step < 0:
