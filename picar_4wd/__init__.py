@@ -164,9 +164,13 @@ def make_distance_list():
     elif current_angle2 <= min_angle:
         current_angle2 = min_angle
         camera_step = camera_step
-    dist = get_distance_at(current_angle2)
+    #dist = get_distance_at(current_angle2)
 
-    scan_list2.append(dist)
+    #scan_list2.append(dist)
+    status = get_status_at(current_angle2, ref1=35)#ref1
+
+    scan_list2.append(status)
+    
     if current_angle2 == min_angle or current_angle2 == max_angle:
         if camera_step < 0:
             # print("reverse")
