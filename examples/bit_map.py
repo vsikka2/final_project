@@ -54,7 +54,7 @@ def main():
             else:
                 idx = scan_list.index(1)
                 scan_map.append(15+idx*5)
-            scan_map.append(scan_list)
+            #scan_map.append(scan_list)
         print(scan_map)
         #map = get_map_from_distances(scan_list)
         #print(map)
