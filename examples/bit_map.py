@@ -33,7 +33,7 @@ def get_map_from_distances(distance):
         ydif = np.abs(point1[1]-point2[1])
         xdif_abs = 1 if point2[0]-point1[0]>0 else -1
         ydif_abs = 1 if point2[1]-point1[1]>0 else -1
-        if(xdif*xdif+ydif*ydif > 1000):
+        if(xdif*xdif+ydif*ydif > 2000):
             i+=1
             continue
         print(point1)
