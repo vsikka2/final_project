@@ -39,6 +39,7 @@ def main():
         scan_list = fc.scan_step(35)
         if not scan_list:
             continue
+        print(scan_list)
         break
         
     # while True:
