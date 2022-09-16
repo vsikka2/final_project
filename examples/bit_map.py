@@ -2,7 +2,7 @@
 import picar_4wd as fc
 import numpy as np
 import sys
-numpy.set_printoptions(threshold = sys.maxsize)
+np.set_printoptions(threshold = sys.maxsize)
 speed = 30
 car = (50,0)
 def get_points_from_distances(distance):
@@ -31,6 +31,7 @@ def get_map_from_distances(distance):
         xdif = np.abs(point1[0]-point2[0])
         ydif = np.abs(point1[1]-point2[1])
         
+
         i+=1
     return map
 
