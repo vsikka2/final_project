@@ -7,7 +7,7 @@ speed = 30
 car = (50,0)
 def get_points_from_distances(distance):
     points = []
-    angle_step = 180/len(distance)
+    angle_step = 10
     cur_angle = -90
     i=0
     print(angle_step)
@@ -49,7 +49,11 @@ def main():
     while True:
         scan_map = []
         for i in range(right*90,-right*91,-right*10):
-            scan_map.append(fc.get_distance_at(i))        
+            dist = fc.get_distance_at(i)
+            if(dist == -2):
+                scan_map.append(100)
+            else:
+                scan_map.append(dist)        
         right *=-1 
         print(scan_map)
         points = get_points_from_distances(scan_map)
