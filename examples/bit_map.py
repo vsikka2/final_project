@@ -34,7 +34,7 @@ def get_map_from_distances(distance):
             i+=1
             continue
         scale = float(ydif/xdif)
-        #if(scale>1):
+        if(scale>1):
             #every 1 x, scale ys  s and then 
 
 
@@ -62,6 +62,7 @@ def main():
                 scan_map.append(dist)        
         right *=-1 
         m = get_map_from_distances(scan_map)
+        m = np.array(m, dtype = int)
         for a in range(100):
             print(*m[a])
         break
