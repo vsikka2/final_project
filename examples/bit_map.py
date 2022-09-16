@@ -2,7 +2,7 @@
 import picar_4wd as fc
 import numpy as np
 
-
+numpy.set_printoptions(threshold = sys.maxsize)
 speed = 30
 car = (50,0)
 def get_points_from_distances(distance):
