@@ -47,9 +47,9 @@ def main():
         scan_map = []
         for i in range(-90,90,18):
             scan_map.append(fc.get_distance_at(i))        
-        print(scan_map)
-        #points = get_points_from_distances(scan_map)
-        #print(points)
+        #print(scan_map)
+        points = get_points_from_distances(scan_map)
+        print(points)
         #map = get_map_from_distances(scan_list)
 #        print(map)
     
