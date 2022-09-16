@@ -24,13 +24,13 @@ def get_map_from_distances(distance):
     for i in points:
         map[i[0]][i[1]] = 1
     i=0
-    # while(i<len(points) - 1):
-    #     point1 = points[i]
-    #     point2 = points[i+1]
-    #     xdif = np.abs(point1[0]-point2[0])
-    #     ydif = np.abs(point1[1]-point2[1])
+    while(i<len(points) - 1):
+        point1 = points[i]
+        point2 = points[i+1]
+        xdif = np.abs(point1[0]-point2[0])
+        ydif = np.abs(point1[1]-point2[1])
         
-    #     i+=1
+        i+=1
     return map
 
 
@@ -53,7 +53,7 @@ def main():
             else:
                 scan_map.append(dist)        
         right *=-1 
-        map = get_map_from_distances(scan_list)
+        map = get_map_from_distances(scan_map)
         print(map)
         break
 
