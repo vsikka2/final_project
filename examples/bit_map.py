@@ -23,6 +23,7 @@ def get_map_from_distances(distance):
     points = get_points_from_distances(distance)
     print(points)
     map = np.zeros((100,100))
+    map[50][0] = -1
     for i in points:
         if(i[0] < 100 and i[1]<100):
             map[i[0]][i[1]] = 1
@@ -49,12 +50,12 @@ def get_map_from_distances(distance):
                 for yval in range(cur_point[1],point2[1]+ydif_abs,ydif_abs):
                     map[cur_point[0]][yval] = 1
                 cur_point = point2
-                break
+                continue
             if(ydif == 0):
                 for xval in range(cur_point[0],point2[0]+xdif_abs,xdif_abs):
                     map[xval][cur_point[1]] = 1
                 cur_point = point2
-                break
+                continue
             
 
     
