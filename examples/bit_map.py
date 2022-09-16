@@ -42,7 +42,6 @@ def get_map_from_distances(distance):
         print(point2)
         scale = float(ydif/xdif)
         cur_point = [point1[0],point1[1]]
-        # -2 to -5 
         while(cur_point[0] != point2[0] or cur_point[1] != point2[1]):
             xdif = np.abs(cur_point[0]-point2[0])
             ydif = np.abs(cur_point[1]-point2[1])
@@ -87,31 +86,33 @@ def get_map_from_distances(distance):
         i+=1
     return map
 
-
-
-def main():
-    
+def setCameraPos():
     while True:
         scan_list = fc.scan_step(35)
         if not scan_list:
             continue
         break
+right = -1
+def getMap():
+    scan_map = []
+    for i in range(right*90,-right*91,-right*angle_step):
+        dist = fc.get_distance_at(i)
+        if(dist == -2):
+            scan_map.append(200)
+        else:
+            scan_map.append(dist)        
+    m = get_map_from_distances(scan_map)
+    m = np.array(m, dtype = int)
+    right*=1
+    return m
 
-    right = -1
+def main():
+    setCameraPos();    
     while True:
-        scan_map = []
-        for i in range(right*90,-right*91,-right*angle_step):
-            dist = fc.get_distance_at(i)
-            if(dist == -2):
-                scan_map.append(100)
-            else:
-                scan_map.append(dist)        
-        right *=-1 
-        m = get_map_from_distances(scan_map)
-        m = np.array(m, dtype = int)
-        for aa in m:
-            for bb in aa:
-                print(bb,end='',sep='')
+        bit_map = getMap()
+        for x in bit_map:
+            for y in x:
+                print(y,end='',sep='')
             print()
         break
 
