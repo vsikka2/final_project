@@ -1,7 +1,7 @@
 
 import picar_4wd as fc
 import numpy as np
-
+import sys
 numpy.set_printoptions(threshold = sys.maxsize)
 speed = 30
 car = (50,0)
