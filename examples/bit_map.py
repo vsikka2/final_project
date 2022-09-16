@@ -50,8 +50,8 @@ def main():
             scan_map.append(fc.get_distance_at(i))        
         right *=-1 
         print(scan_map)
- #       points = get_points_from_distances(scan_map)
-#        print(points)
+        points = get_points_from_distances(scan_map)
+        print(points)
         #map = get_map_from_distances(scan_list)
 #        print(map)
     
