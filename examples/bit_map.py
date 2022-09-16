@@ -21,6 +21,7 @@ def get_points_from_distances(distance):
 def get_map_from_distances(distance):
     points = get_points_from_distances(distance)
     map = np.zeros((100,100))
+    points = [(2,2),(4,4),(6,6)]
     for i in points:
         if(i[0] < 100 and i[1]<100):
             map[i[0]][i[1]] = 1
