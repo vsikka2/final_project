@@ -43,10 +43,12 @@ def main():
             continue
         break
 
+    right = -1
     while True:
         scan_map = []
-        for i in range(-90,90,10):
+        for i in range(right*90,-right*90,-right*10):
             scan_map.append(fc.get_distance_at(i))        
+        right *=-1 
         print(scan_map)
  #       points = get_points_from_distances(scan_map)
 #        print(points)
