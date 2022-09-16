@@ -1,6 +1,8 @@
 
 import picar_4wd as fc
 import numpy as np
+
+
 speed = 30
 car = (50,0)
 def get_points_from_distances(distance):
@@ -36,9 +38,7 @@ def get_map_from_distances(distance):
 def main():
     
     while True:
-        scan_list = fc.scan_step(35)
-        if not scan_list:
-            continue
+        scan_list = get_distance_at(50)
         print(scan_list)
         break
         
