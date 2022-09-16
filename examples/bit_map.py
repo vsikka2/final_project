@@ -53,8 +53,8 @@ def main():
             else:
                 scan_map.append(dist)        
         right *=-1 
-        map = get_map_from_distances(scan_map)
-        print(map)
+        m = get_map_from_distances(scan_map)
+        print(m)
         break
 
         
