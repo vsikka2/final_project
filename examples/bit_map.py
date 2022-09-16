@@ -12,9 +12,10 @@ def get_points_from_distances(distance):
     i=0
     while(cur_angle<=90):
         if(distance[i]> 0):
-            x = distance[i]*np.sin(cur_angle*np.pi/180.0)+car[0]
-            y = distance[i]*np.cos(cur_angle*np.pi/180.0)
-            points.append((int(x),int(y)))
+            x = int(distance[i]*np.sin(cur_angle*np.pi/180.0)+car[0])
+            y = int(distance[i]*np.cos(cur_angle*np.pi/180.0))
+            if(x>-1 and x<100 and y>-1 and y<100):        
+                points.append((int(x),int(y)))
         i+=1
         cur_angle+=angle_step
     return points
