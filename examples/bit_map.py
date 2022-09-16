@@ -30,7 +30,13 @@ def get_map_from_distances(distance):
         point2 = points[i+1]
         xdif = np.abs(point1[0]-point2[0])
         ydif = np.abs(point1[1]-point2[1])
-        
+        if(xdif*xdif+ydif*ydif >25):
+            i+=1
+            continue
+        scale = double(ydif/xdif)
+        #if(scale>1):
+            #every 1 x, scale ys  s and then 
+
 
         i+=1
     return map
@@ -56,7 +62,8 @@ def main():
                 scan_map.append(dist)        
         right *=-1 
         m = get_map_from_distances(scan_map)
-        print(m)
+        for a in range(100):
+            print(*m[a])
         break
 
         
