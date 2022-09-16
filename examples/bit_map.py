@@ -37,28 +37,14 @@ def get_map_from_distances(distance):
 
 def main():
     
-    while True:
-        scan_list = fc.get_distance_at(50)
-        print(scan_list)
-        break
         
-    # while True:
-    #     scan_map = []
-    #     for i in range(15,90,5):           
-    #         scan_list=[]
-    #         while(not scan_list):
-    #             scan_list = fc.scan_step(i)    
-    #         if(0 in scan_list):
-    #             scan_map.append(0)
-    #         elif(1 not in scan_list):
-    #             scan_map.append(100)
-    #         else:
-    #             idx = scan_list.index(1)
-    #             scan_map.append(15+idx*5)
-    #         scan_map.append(scan_list)
-    #     print(scan_map)
-    #     #map = get_map_from_distances(scan_list)
-        #print(map)
+    while True:
+        scan_map = []
+        for i in range(-90,90,18):
+            scan_map.append(fc.get_distance_at(i))        
+        print(scan_map)
+        #map = get_map_from_distances(scan_list)
+        print(map)
     
 
         
