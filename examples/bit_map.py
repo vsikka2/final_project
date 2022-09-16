@@ -104,8 +104,10 @@ def main():
         right *=-1 
         m = get_map_from_distances(scan_map)
         m = np.array(m, dtype = int)
-        for a in range(100):
-            print(*m[a])
+        for aa in m:
+            for bb in aa:
+                print(bb,end='',sep='')
+            print()
         break
 
         
