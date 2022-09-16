@@ -28,6 +28,8 @@ def get_map_from_distances(distance):
     while(i<len(points) - 1):
         point1 = points[i]
         point2 = points[i+1]
+        print(point1)
+        print(point2)
         xdif = np.abs(point1[0]-point2[0])
         ydif = np.abs(point1[1]-point2[1])
         xdif_abs = 1 if point2[0]-point1[0]>0 else -1
