@@ -30,12 +30,53 @@ def get_map_from_distances(distance):
         point2 = points[i+1]
         xdif = np.abs(point1[0]-point2[0])
         ydif = np.abs(point1[1]-point2[1])
-        if(xdif*xdif+ydif*ydif >25):
+        xdif_abs = 1 if point2[0]-point1[0]>0 else -1
+        ydif_abs = 1 if point2[1]-point1[1]>0 else -1
+        if(xdif*xdif+ydif*ydif > 25):
             i+=1
             continue
         scale = float(ydif/xdif)
-        #if(scale>1):
-            #every 1 x, scale ys  s and then 
+        cur_point = [point1[0],point1[1]]
+        # -2 to -5 
+        while(cur_point[0] != point2[0] and cur_point[1] != point2[1]):
+            xdif = np.abs(cur_point[0]-point2[0])
+            ydif = np.abs(cur_point[1]-point2[1])
+            if(xdif == 0):
+                for yval in range(cur_point[1],point2[1]+ydif_abs,ydif_abs):
+                    map[cur_point[0]][yval] = 1
+                cur_point = point2
+                break
+            if(ydif == 0):
+                for xval in range(cur_point[0],point2[0]+xdif_abs,xdif_abs):
+                    map[xval][cur_point[1]] = 1
+                cur_point = point2
+                break
+            
+
+    
+            scale = float(ydif/xdif)
+            
+            if(scale>1):
+                #every 1 x, scale ys  s and then 
+                cur_point[0]+=xdif_abs
+                map[cur_point[0]][cur_point[1]] = 1
+                scale_int = int(scale)
+                for scale_val in range(scale_int):
+                    cur_point[1]+=ydif_abs
+                    map[cur_point[0]][cur_point[1]] = 1
+            elif(scale<1):
+                cur_point[1]+=ydif_abs
+                map[cur_point[0]][cur_point[1]] = 1
+                scale_int = int(scale)
+                for scale_val in range(scale_int):
+                    cur_point[0]+=xdif_abs
+                    map[cur_point[0]][cur_point[1]] = 1
+            else:
+                map[cur_point[0]][cur_point[1]] = 1
+                map[cur_point[0]+xdif_abs][cur_point[1]] = 1
+                map[cur_point[0]][cur_point[1]+ydif_abs] = 1
+                cur_point=[cur_point[0]+xdif_abs,cur_point[1]+ydif_abs]
+
 
 
         i+=1
