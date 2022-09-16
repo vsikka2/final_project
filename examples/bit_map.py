@@ -10,13 +10,11 @@ def get_points_from_distances(distance):
     angle_step = 10
     cur_angle = -90
     i=0
-    print(angle_step)
     while(cur_angle<=90):
-        print(i)
         if(distance[i]> 0):
             x = distance[i]*np.sin(cur_angle*np.pi/180.0)+car[0]
             y = distance[i]*np.cos(cur_angle*np.pi/180.0)
-            points.append((x,y))
+            points.append((int(x),int(y)))
         i+=1
         cur_angle+=angle_step
     return points
@@ -55,7 +53,6 @@ def main():
             else:
                 scan_map.append(dist)        
         right *=-1 
-        print(scan_map)
         points = get_points_from_distances(scan_map)
         print(points)
         break
