@@ -122,8 +122,6 @@ def get_distance_at(angle):
 
 def get_status_at(angle, ref1=35, ref2=10):
     dist = get_distance_at(angle)
-    return dist
-    print(dist)
     if dist > ref1 or dist == -2:
         return 2
     elif dist > ref2:
@@ -141,7 +139,6 @@ def scan_step(ref):
         current_angle = min_angle
         us_step = STEP
     status = get_status_at(current_angle, ref1=ref)#ref1
-    print(status)
     scan_list.append(status)
     if current_angle == min_angle or current_angle == max_angle:
         if us_step < 0:
@@ -154,35 +151,6 @@ def scan_step(ref):
     else:
         return False
 
-scan_list2=[]
-current_angle2=0
-camera_step=18
-def make_distance_list():
-    global scan_list2, current_angle2, camera_step
-    current_angle2 += camera_step
-    if current_angle2 >= max_angle:
-        current_angle2 = max_angle
-        camera_step = -camera_step
-    elif current_angle2 <= min_angle:
-        current_angle2 = min_angle
-        camera_step = camera_step
-    #dist = get_distance_at(current_angle2)
-
-    #scan_list2.append(dist)
-    status = get_status_at(current_angle2, ref1=35)#ref1
-
-    scan_list2.append(status)
-    
-    if current_angle2 == min_angle or current_angle2 == max_angle:
-        if camera_step < 0:
-            # print("reverse")
-            scan_list2.reverse()
-        # print(scan_list)
-        tmp = scan_list2.copy()
-        scan_list2 = []
-        return tmp
-    else:
-        return False
 
 ########################################################
 # Motors

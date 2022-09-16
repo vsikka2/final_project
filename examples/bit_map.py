@@ -4,10 +4,10 @@ import numpy as np
 import sys
 np.set_printoptions(threshold = sys.maxsize)
 speed = 30
+angle_step = 10
 car = (50,0)
 def get_points_from_distances(distance):
     points = []
-    angle_step = 10
     cur_angle = -90
     i=0
     while(cur_angle<=90):
@@ -100,13 +100,12 @@ def main():
     right = -1
     while True:
         scan_map = []
-        for i in range(right*90,-right*91,-right*10):
+        for i in range(right*90,-right*91,-right*angle_step):
             dist = fc.get_distance_at(i)
             if(dist == -2):
                 scan_map.append(100)
             else:
                 scan_map.append(dist)        
-        print(scan_map)
         right *=-1 
         m = get_map_from_distances(scan_map)
         m = np.array(m, dtype = int)
