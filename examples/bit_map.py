@@ -33,8 +33,8 @@ def get_map_from_distances(distance):
         if(xdif*xdif+ydif*ydif >25):
             i+=1
             continue
-        scale = double(ydif/xdif)
-        #if(scale>1):
+        scale = float(ydif/xdif)
+        if(scale>1):
             #every 1 x, scale ys  s and then 
 
 
