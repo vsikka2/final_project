@@ -104,6 +104,7 @@ def main():
                 scan_map.append(100)
             else:
                 scan_map.append(dist)        
+        print(scan_map)
         right *=-1 
         m = get_map_from_distances(scan_map)
         m = np.array(m, dtype = int)
