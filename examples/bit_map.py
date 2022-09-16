@@ -38,7 +38,7 @@ def get_map_from_distances(distance):
 def main():
     
     while True:
-        scan_list = get_distance_at(50)
+        scan_list = fc.get_distance_at(50)
         print(scan_list)
         break
         
