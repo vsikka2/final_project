@@ -46,7 +46,7 @@ def main():
     right = -1
     while True:
         scan_map = []
-        for i in range(right*90,-right*90,-right*10):
+        for i in range(right*90,-right*91,-right*10):
             scan_map.append(fc.get_distance_at(i))        
         right *=-1 
         print(scan_map)
