@@ -68,7 +68,7 @@ def get_map_from_distances(distance):
             elif(scale<1):
                 cur_point[1]+=ydif_abs
                 map[cur_point[0]][cur_point[1]] = 1
-                scale_int = int(scale)
+                scale_int = int(1/scale)
                 for scale_val in range(scale_int):
                     cur_point[0]+=xdif_abs
                     map[cur_point[0]][cur_point[1]] = 1
