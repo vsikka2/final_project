@@ -41,10 +41,11 @@ def main():
         scan_list = fc.scan_step(35)
         if not scan_list:
             continue
+        break
 
     while True:
         scan_map = []
-        for i in range(90,-90,-18):
+        for i in range(-90,90,18):
             scan_map.append(fc.get_distance_at(i))        
         print(scan_map)
         #points = get_points_from_distances(scan_map)
