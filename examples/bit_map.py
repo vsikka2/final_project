@@ -37,7 +37,11 @@ def get_map_from_distances(distance):
 
 def main():
     
-        
+    while True:
+        scan_list = fc.scan_step(35)
+        if not scan_list:
+            continue
+
     while True:
         scan_map = []
         for i in range(-90,90,18):
