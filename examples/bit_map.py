@@ -47,7 +47,6 @@ def get_map_from_distances(distance):
         if(xdif*xdif+ydif*ydif > MIN_DISTANCE_LINE):
             i+=1
             continue
-        scale = float(ydif/xdif)
         cur_point = [point1[0],point1[1]]
         while(cur_point[0] != point2[0] or cur_point[1] != point2[1]):
             xdif = np.abs(cur_point[0]-point2[0])
