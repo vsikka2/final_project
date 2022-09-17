@@ -315,7 +315,7 @@ def main():
             break
         #else:
             #print(path)
-        for x in m:
+        for x in bit_map:
             for y in x:
                 print(y,end='',sep='')
             print()
