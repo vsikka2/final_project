@@ -248,7 +248,7 @@ def traverse_path(path,facing):
             DESTINATION[1] -=cur_movement
         
         fc.forward(cur_movement)
-        sleep(1)
+        sleep(0.5)
         fc.stop()
         cur_location = i
     return facing
