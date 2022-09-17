@@ -12,7 +12,11 @@ MIN_DISTANCE_LINE = 120
 DESTINATION = [0,80]
 MIN_MOVE_DISTANCE = 5
 CAMERA_RESCAN_DIST = 25
-def get_points_from_distances(distance):
+def get_points_from_distances(distance2):
+
+    distance =[]
+    for i in distance2:
+        distance.append(i-15)
     points = []
     cur_angle = -90
     i=0
