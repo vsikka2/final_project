@@ -110,6 +110,7 @@ def getMap(right):
     for i in range(len(m)):
         for j in range(len(m[0])):
             map[i//10][j//10] +=m[i][j]
+    map = np.array(map, dtype = int)
     return map
 def heuristic(a, b):
     return np.sqrt((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2)
