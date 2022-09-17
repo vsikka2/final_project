@@ -112,10 +112,15 @@ def getMap(right):
 def heuristic(a, b):
     return np.sqrt((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2)
 
-def local_destination():
+def local_destination(absolute_direction):
     #has DESTINATION which is with respect to CAR_START 
     # need to get point in 100,100 which is equivalent
     local = [DESTINATION[0]+CAR_START[0],DESTINATION[1]+CAR_START[1]]
+    if(absolute_direction==0):
+        local = [local[1],-local[0]]
+    if(absolute_direction==2):
+        local=[-local[1],local[0]]
+    
     if(local[0]<100 and local[1]<100 and local[0]>=0 and local[1]>=0):
         return local
     if(local[1]-CAR_START[1] == 0):
@@ -137,10 +142,10 @@ def local_destination():
         return [0,-y_for_x_100]
     return local
 
-def astar(array):
+def astar(array,absolute_direction):
     start = (CAR_START[0],CAR_START[1])
 
-    goal = local_destination()
+    goal = local_destination(absolute_direction)
     goal = (goal[0],goal[1])
     neighbors = [(0,MIN_MOVE_DISTANCE),(0,-MIN_MOVE_DISTANCE),(MIN_MOVE_DISTANCE,0),(-MIN_MOVE_DISTANCE,0)]
 
@@ -286,7 +291,7 @@ def main():
     while True:
         bit_map = getMap(right)
         right*=-1
-        path = astar(bit_map)
+        path = astar(bit_map,absolute_direction)
         
         if(path):
             cur_loc = CAR_START
