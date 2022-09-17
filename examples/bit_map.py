@@ -251,7 +251,7 @@ def traverse_path(path,absolute_direction):
             sleep(0.5)
             fc.stop()
     
-        elif(i[0]-cur_location[0]<0):
+        if(i[0]-cur_location[0]<0):
             
             if(facing == 1):
                 print("Absolute direction changed in left")
@@ -267,7 +267,7 @@ def traverse_path(path,absolute_direction):
             fc.forward(cur_movement)
             sleep(0.5)
             fc.stop()
-        else:
+        if(i[1]-cur_location[1]>0):
             if(facing == 2):
                 print("Absolute direction changed in turn left in forward")
                 fc.turn_left(speed)
