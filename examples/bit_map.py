@@ -230,7 +230,7 @@ def astar(array,absolute_direction):
 
                 heapq.heappush(oheap, (fscore[neighbor], neighbor)) 
 
-
+Turn_val = 1.75
 def traverse_path(path,absolute_direction):
     cur_location = CAR_START
     facing = 1
@@ -241,7 +241,7 @@ def traverse_path(path,absolute_direction):
             if(facing == 1):
 
                 fc.turn_right(speed)
-                sleep(2)    
+                sleep(Turn_val)    
                 absolute_direction+=1
                 facing += 1
             cur_movement = i[0]-cur_location[0]
@@ -254,18 +254,18 @@ def traverse_path(path,absolute_direction):
         
                 fc.turn_left(speed)
                 absolute_direction-=1
-                sleep(2)
+                sleep(Turn_val)
                 facing -=1
             cur_movement = cur_location[0] - i[0]  
             fc.forward(cur_movement)
         if(i[1]-cur_location[1]>0):
             if(facing == 2):
                 fc.turn_left(speed)
-                sleep(2)
+                sleep(Turn_val)
                 absolute_direction-=1
             if(facing == 0):
                 fc.turn_right(speed)
-                sleep(2)
+                sleep(Turn_val)
                 absolute_direction+=1
             cur_movement = i[1]-cur_location[1]
             fc.forward(cur_movement)
