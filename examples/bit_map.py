@@ -147,6 +147,7 @@ def astar(array,absolute_direction):
     start = (CAR_START[0],CAR_START[1])
 
     goal = local_destination(absolute_direction)
+    print(goal)
     goal = (goal[0],goal[1])
     neighbors = [(0,MIN_MOVE_DISTANCE),(0,-MIN_MOVE_DISTANCE),(MIN_MOVE_DISTANCE,0),(-MIN_MOVE_DISTANCE,0)]
 
