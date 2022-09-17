@@ -261,8 +261,9 @@ def main():
         bit_map = getMap(right)
         right*=-1
         path = astar(bit_map)
-        for i in path:
-            bit_map[i[0]][i[1]] = 2
+        if(path):
+            for i in path:
+                bit_map[i[0]][i[1]] = 2
         for x in bit_map:
              for y in x:
                  print(y,end='',sep='')
