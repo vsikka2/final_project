@@ -107,8 +107,8 @@ def getMap(right):
     m = np.array(m, dtype = int)
 
     map = np.zeros((10,10))
-    for i in len(m):
-        for j in len(m[0]):
+    for i in range(len(m)):
+        for j in range(len(m[0])):
             map[i//10][j//10] +=m[i][j]
     return map
 def heuristic(a, b):
