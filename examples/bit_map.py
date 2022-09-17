@@ -105,19 +105,8 @@ def getMap(right):
         else:
             scan_map.append(dist)        
     m = get_map_from_distances(scan_map)
-    m = np.array(m, dtype = int)
-    for x in m:
-        for y in x:
-            print(y,end='',sep='')
-        print()
-        
-    map = np.zeros((10,10))
-    for i in range(len(m)):
-        for j in range(len(m[0])):
-            if(m[i][j] == 1):
-                map[i//10][j//10] =1
-    map = np.array(map, dtype = int)
-    return map
+    m = np.array(m, dtype = int)        
+    return m
 def heuristic(a, b):
     return np.sqrt((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2)
 
