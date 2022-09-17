@@ -255,7 +255,7 @@ def traverse_path(path,facing):
             fc.forward(cur_movement)
             sleep(0.5)
             fc.stop()
-    else:
+        else:
             if(facing == 2):
                 fc.turn_left(speed)
             if(facing == 0):
@@ -266,7 +266,6 @@ def traverse_path(path,facing):
             fc.forward(cur_movement)
             sleep(0.5)
             fc.stop()
-
         cur_location = i
     return facing
 def main():
