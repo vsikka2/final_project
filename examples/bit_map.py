@@ -34,6 +34,12 @@ def get_map_from_distances(distance):
         if(i[0] < 100 and i[1]<100):
             map[i[0]][i[1]] = 1
     i=0
+    for x in map:
+        for y in x:
+            print(y,end='',sep='')
+        print()
+        
+
     while(i<len(points) - 1):
         point1 = points[i]
         point2 = points[i+1]
@@ -269,10 +275,10 @@ def main():
         bit_map = getMap(right)
         right*=-1
         path = astar(bit_map)
-        for x in bit_map:
-             for y in x:
-                 print(y,end='',sep='')
-             print()
+        # for x in bit_map:
+        #      for y in x:
+        #          print(y,end='',sep='')
+        #      print()
         if(path is None):
             print("Path does not exist")
             break
