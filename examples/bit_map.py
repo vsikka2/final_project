@@ -34,6 +34,8 @@ def get_map_from_distances(distance):
         if(i[0] < 100 and i[1]<100):
             map[i[0]][i[1]] = 1
     i=0
+    map = np.array(map, dtype = int)
+
     for x in map:
         for y in x:
             print(y,end='',sep='')
