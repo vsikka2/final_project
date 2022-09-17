@@ -8,7 +8,7 @@ np.set_printoptions(threshold = sys.maxsize)
 speed = 30
 ANGLE_STEP = 10
 CAR_START = [50,0]
-MIN_DISTANCE_LINE = 150
+MIN_DISTANCE_LINE = 120
 DESTINATION = [0,80]
 MIN_MOVE_DISTANCE = 1
 CAMERA_RESCAN_DIST = 10
@@ -109,7 +109,8 @@ def getMap(right):
     map = np.zeros((10,10))
     for i in range(len(m)):
         for j in range(len(m[0])):
-            map[i//10][j//10] +=m[i][j]
+            if(map[i][j] == 1):
+                map[i//10][j//10] =1
     map = np.array(map, dtype = int)
     return map
 def heuristic(a, b):
