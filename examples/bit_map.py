@@ -166,7 +166,6 @@ def astar(array):
             data.reverse()
             path=[]
             for i in range(int(CAMERA_RESCAN_DIST/MIN_MOVE_DISTANCE)):
-                
                 if( i <len(data)):
                     path.append(data[i])
             return path
@@ -262,8 +261,19 @@ def main():
         right*=-1
         path = astar(bit_map)
         if(path):
+            cur_loc = CAR_START
             for i in path:
-                bit_map[i[0]][i[1]] = 2
+                if(i[1] - cur_loc[1]>0):
+                    for j in range(cur_loc[1],i[1]+1):
+                        bit_map[i[0]][j] = 2
+                if(i[0] - cur_loc[0]<0):
+                    for j in range(i[0],cur_loc[0]+1):
+                        bit_map[j][i[1]] = 2
+                if(i[0] - cur_loc[0]>0):
+                    for j in range(cur_loc[0],i[0]+1):
+                        bit_map[j][i[1]] = 2
+                
+                cur_loc=i
         for x in bit_map:
              for y in x:
                  print(y,end='',sep='')
