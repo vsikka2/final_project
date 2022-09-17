@@ -238,11 +238,11 @@ def traverse_path(path,absolute_direction):
         if(i[0]-cur_location[0]>0):
             if(facing == 1):
                 fc.forward(-5)
-                sleep(0.5)
+                sleep(1)
                 fc.turn_right(speed)
                 sleep(2)    
                 absolute_direction+=1
-            facing += 1
+                facing += 1
             cur_movement = i[0]-cur_location[0]
             
             fc.forward(cur_movement)
@@ -253,12 +253,12 @@ def traverse_path(path,absolute_direction):
             
             if(facing == 1):
                 fc.forward(-5)
-                sleep(0.5)
+                sleep(1)
         
                 fc.turn_left(speed)
                 absolute_direction-=1
                 sleep(2)
-            facing -=1
+                facing -=1
             cur_movement = cur_location[0] - i[0]  
             fc.forward(cur_movement)
             sleep(0.5)
@@ -274,6 +274,7 @@ def traverse_path(path,absolute_direction):
             fc.forward(cur_movement)
             sleep(0.5)
             fc.stop()
+            facing=1
         if(absolute_direction == 0):
             DESTINATION[0] -=cur_movement
         if(absolute_direction == 1):
