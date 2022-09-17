@@ -147,7 +147,7 @@ def astar(array,absolute_direction):
     start = (CAR_START[0],CAR_START[1])
 
     goal = local_destination(absolute_direction)
-    print(goal)
+#    print(goal)
     goal = (goal[0],goal[1])
     neighbors = [(0,MIN_MOVE_DISTANCE),(0,-MIN_MOVE_DISTANCE),(MIN_MOVE_DISTANCE,0),(-MIN_MOVE_DISTANCE,0)]
 
@@ -178,7 +178,7 @@ def astar(array,absolute_direction):
             for i in range(int(CAMERA_RESCAN_DIST/MIN_MOVE_DISTANCE)):
                 if( i <len(data)):
                     path.append(data[i])
-            print("A* search start is "+str(start) +" end is "+str(goal) + " path is = "+str(path))
+            #print("A* search start is "+str(start) +" end is "+str(goal) + " path is = "+str(path))
 
             return path
         close_set.add(current)
@@ -285,7 +285,7 @@ def traverse_path(path,absolute_direction):
             fc.stop()
             
         cur_location = i
-        print("Absolute Destination is "+str(DESTINATION) + "absolute direction is "+str(absolute_direction))
+        #print("Absolute Destination is "+str(DESTINATION) + "absolute direction is "+str(absolute_direction))
     return absolute_direction
 def main():
     setCameraPos();    
@@ -311,10 +311,15 @@ def main():
                 
                 cur_loc=i
         if(path is None):
-            print("Path does not exist")
+            #print("Path does not exist")
             break
         else:
-            print(path)
+            #print(path)
+        for x in m:
+            for y in x:
+                print(y,end='',sep='')
+            print()
+
         absolute_direction = traverse_path(path,absolute_direction)
         if(DESTINATION==[0,0]):
             break
