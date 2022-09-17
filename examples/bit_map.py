@@ -117,9 +117,9 @@ def local_destination(absolute_direction):
     # need to get point in 100,100 which is equivalent
     local = [DESTINATION[0],DESTINATION[1]]
     if(absolute_direction==0):
-        local=[-local[1],local[0]]
-    if(absolute_direction==2):
         local = [local[1],-local[0]]
+    if(absolute_direction==2):
+        local=[-local[1],local[0]]
     local = [local[0]+CAR_START[0],local[1]+CAR_START[1]]
 
     print("Local Destination is "+str(local))
