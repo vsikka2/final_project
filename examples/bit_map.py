@@ -3,6 +3,7 @@ import picar_4wd as fc
 import numpy as np
 import sys
 import heapq
+from time import sleep
 np.set_printoptions(threshold = sys.maxsize)
 speed = 30
 ANGLE_STEP = 10
