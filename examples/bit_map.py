@@ -122,13 +122,12 @@ def local_destination(absolute_direction):
         local=[-local[1],local[0]]
     local = [local[0]+CAR_START[0],local[1]+CAR_START[1]]
 
-    print("Local Destination is "+str(local))
     if(local[0]<100 and local[1]<100 and local[0]>=0 and local[1]>=0):
         return local
     if(local[1]-CAR_START[1] == 0):
         if(local[0]-CAR_START[0]>0):
             return [99,CAR_START[1]]
-        else:
+        if(local[0]-CAR_START[0]<0):
             return [0,CAR_START[1]]
     if(local[0]-CAR_START[0]==0):
         return [50,99]
