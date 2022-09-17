@@ -250,14 +250,15 @@ def main():
     while True:
         bit_map = getMap(right)
         right*=-1
+        
         path = astar(bit_map)
         print(path)
         traverse_path(path)
-        # for x in bit_map:
-        #     for y in x:
-        #         print(y,end='',sep='')
-        #     print()
-        # break
+        for x in bit_map:
+            for y in x:
+                print(y,end='',sep='')
+            print()
+        break
         if(DESTINATION==[0,0]):
             break
 
