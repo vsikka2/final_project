@@ -8,7 +8,7 @@ np.set_printoptions(threshold = sys.maxsize)
 speed = 30
 ANGLE_STEP = 10
 CAR_START = [50,0]
-MIN_DISTANCE_LINE = 3500
+MIN_DISTANCE_LINE = 100
 DESTINATION = [0,80]
 MIN_MOVE_DISTANCE = 4
 CAMERA_RESCAN_DIST = 40
@@ -182,11 +182,11 @@ def astar(array):
                 if 0 <= neighbor[1] < array.shape[1]:                
                     invalid = 0
                     if(current[0] == neighbor[0]):
-                        for nodes in range(1,11):
+                        for nodes in range(1,MIN_MOVE_DISTANCE):
                             if(array[nodes][neighbor[1]] == 1):
                                 invalid = 1
                     if(current[1] == neighbor[1]):
-                        for nodes in range(1,11):
+                        for nodes in range(1,MIN_MOVE_DISTANCE):
                             if(array[neighbor[0]][nodes] == 1):
                                 invalid = 1
                     if invalid:
