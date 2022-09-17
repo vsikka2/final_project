@@ -13,6 +13,7 @@ DESTINATION = [0,80]
 MIN_MOVE_DISTANCE = 1
 CAMERA_RESCAN_DIST = 10
 def get_points_from_distances(distance):
+    print(distance)
     points = []
     cur_angle = -90
     i=0
