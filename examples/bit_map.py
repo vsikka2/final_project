@@ -93,7 +93,8 @@ def setCameraPos():
         if not scan_list:
             continue
         break
-right = -1
+global right
+
 def getMap():
     scan_map = []
     for i in range(right*90,-right*91,-right*ANGLE_STEP):
@@ -245,7 +246,7 @@ def traverse_path(path):
     
 def main():
     setCameraPos();    
-    
+    right = -1
     while True:
         bit_map = getMap()
         path = astar(bit_map)
