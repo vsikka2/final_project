@@ -233,7 +233,7 @@ def traverse_path(path,facing):
                 fc.forward(-5)
                 sleep(0.5)
                 fc.turn_right(speed)
-                sleep(1)
+                sleep(2)
             facing = 2
             cur_movement = i[0]-cur_location[0]
             DESTINATION[0] -=cur_movement
@@ -248,7 +248,7 @@ def traverse_path(path,facing):
                 sleep(0.5)
         
                 fc.turn_left(speed)
-                sleep(1)
+                sleep(2)
             facing = 0
             cur_movement = cur_location[0] - i[0]  
             DESTINATION[0] +=cur_movement
