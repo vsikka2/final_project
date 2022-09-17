@@ -11,9 +11,8 @@ CAR_START = [50,0]
 MIN_DISTANCE_LINE = 120
 DESTINATION = [0,80]
 MIN_MOVE_DISTANCE = 10
-CAMERA_RESCAN_DIST = 10
+CAMERA_RESCAN_DIST = 50
 def get_points_from_distances(distance):
-    print(distance)
     points = []
     cur_angle = -90
     i=0
@@ -271,9 +270,9 @@ def main():
             break
         else:
             print(path)
-        #facing = traverse_path(path,facing)
-        #if(DESTINATION==[0,0]):
-        #    break
+        facing = traverse_path(path,facing)
+        if(DESTINATION==[0,0]):
+            break
 
         
 if __name__ == "__main__":
