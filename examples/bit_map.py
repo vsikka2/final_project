@@ -93,9 +93,8 @@ def setCameraPos():
         if not scan_list:
             continue
         break
-global right
 
-def getMap():
+def getMap(right):
     scan_map = []
     for i in range(right*90,-right*91,-right*ANGLE_STEP):
         dist = fc.get_distance_at(i)
@@ -105,7 +104,6 @@ def getMap():
             scan_map.append(dist)        
     m = get_map_from_distances(scan_map)
     m = np.array(m, dtype = int)
-    right*=1
     return m
 def heuristic(a, b):
     return np.sqrt((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2)
@@ -248,7 +246,8 @@ def main():
     setCameraPos();    
     right = -1
     while True:
-        bit_map = getMap()
+        bit_map = getMap(right)
+        right*=-1
         path = astar(bit_map)
         traverse_path(path)
         # for x in bit_map:
