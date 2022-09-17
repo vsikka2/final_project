@@ -8,10 +8,10 @@ np.set_printoptions(threshold = sys.maxsize)
 speed = 30
 ANGLE_STEP = 10
 CAR_START = [50,0]
-MIN_DISTANCE_LINE = 200
+MIN_DISTANCE_LINE = 150
 DESTINATION = [0,80]
-MIN_MOVE_DISTANCE = 4
-CAMERA_RESCAN_DIST = 40
+MIN_MOVE_DISTANCE = 1
+CAMERA_RESCAN_DIST = 10
 def get_points_from_distances(distance):
     points = []
     cur_angle = -90
