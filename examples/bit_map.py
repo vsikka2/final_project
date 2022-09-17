@@ -251,7 +251,7 @@ def main():
         #bit_map = getMap(right)
         #right*=-1
         fc.turn_right(speed)
-
+        sleep(1)
         # path = astar(bit_map)
         # print(path)
         # traverse_path(path)
@@ -259,7 +259,6 @@ def main():
         #     for y in x:
         #         print(y,end='',sep='')
         #     print()
-        break
         # if(DESTINATION==[0,0]):
         #     break
 
