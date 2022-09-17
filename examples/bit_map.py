@@ -10,7 +10,7 @@ ANGLE_STEP = 10
 CAR_START = [50,0]
 MIN_DISTANCE_LINE = 120
 DESTINATION = [0,80]
-MIN_MOVE_DISTANCE = 1
+MIN_MOVE_DISTANCE = 10
 CAMERA_RESCAN_DIST = 10
 def get_points_from_distances(distance):
     print(distance)
@@ -183,11 +183,11 @@ def astar(array):
                 if 0 <= neighbor[1] < array.shape[1]:                
                     invalid = 0
                     if(current[0] == neighbor[0]):
-                        for nodes in range(1,MIN_MOVE_DISTANCE):
+                        for nodes in range(-MIN_MOVE_DISTANCE/2,MIN_MOVE_DISTANCE/2):
                             if(array[nodes][neighbor[1]] == 1):
                                 invalid = 1
                     if(current[1] == neighbor[1]):
-                        for nodes in range(1,MIN_MOVE_DISTANCE):
+                        for nodes in range(-MIN_MOVE_DISTANCE/2,MIN_MOVE_DISTANCE/2):
                             if(array[neighbor[0]][nodes] == 1):
                                 invalid = 1
                     if invalid:
@@ -269,6 +269,8 @@ def main():
         if(path is None):
             print("Path does not exist")
             break
+        else:
+            print(path)
         #facing = traverse_path(path,facing)
         #if(DESTINATION==[0,0]):
         #    break
