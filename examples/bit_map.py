@@ -9,7 +9,7 @@ speed = 30
 ANGLE_STEP = 10
 CAR_START = [50,0]
 MIN_DISTANCE_LINE = 3500
-DESTINATION = [10,0]
+DESTINATION = [20,20]
 MIN_MOVE_DISTANCE = 10
 CAMERA_RESCAN_DIST = 50
 def get_points_from_distances(distance):
@@ -221,12 +221,14 @@ def traverse_path(path):
         if(i[0]-cur_location[0]>0):
             if(facing == 1):
                 fc.turn_right(speed)
+                sleep(1)
             facing = 2
             cur_movement = i[0]-cur_location[0]
             DESTINATION[0] -=cur_movement
         elif(i[0]-cur_location[0]<0):
             if(facing == 1):
                 fc.turn_left(speed)
+                sleep(1)
             facing = 0
             cur_movement = cur_location[0] - i[0]  
             DESTINATION[0] +=cur_movement
@@ -248,19 +250,16 @@ def main():
     setCameraPos();    
     right = -1
     while True:
-        #bit_map = getMap(right)
-        #right*=-1
-        fc.turn_right(speed)
-        sleep(1)
-        # path = astar(bit_map)
-        # print(path)
-        # traverse_path(path)
+        bit_map = getMap(right)
+        right*=-1
+        path = astar(bit_map)
+        traverse_path(path)
         # for x in bit_map:
         #     for y in x:
         #         print(y,end='',sep='')
         #     print()
-        # if(DESTINATION==[0,0]):
-        #     break
+        if(DESTINATION==[0,0]):
+            break
 
         
 if __name__ == "__main__":
