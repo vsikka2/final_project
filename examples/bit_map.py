@@ -9,7 +9,7 @@ speed = 30
 ANGLE_STEP = 10
 CAR_START = [50,0]
 MIN_DISTANCE_LINE = 3500
-DESTINATION = [0,40]
+DESTINATION = [20,20]
 MIN_MOVE_DISTANCE = 10
 CAMERA_RESCAN_DIST = 50
 def get_points_from_distances(distance):
@@ -209,7 +209,7 @@ def astar(array):
 
                 gscore[neighbor] = tentative_g_score
 
-                fscore[neighbor] = tentative_g_score + heuristic(neighbor, goal)
+                fscore[neighbor] = tentative_g_score + heuristic(neighbor, goal) 
 
                 heapq.heappush(oheap, (fscore[neighbor], neighbor)) 
 
