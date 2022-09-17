@@ -256,10 +256,10 @@ def main():
         right*=-1
         path = astar(bit_map)
         facing = traverse_path(path,facing)
-        # for x in bit_map:
-        #     for y in x:
-        #         print(y,end='',sep='')
-        #     print()
+        for x in bit_map:
+             for y in x:
+                 print(y,end='',sep='')
+             print()
         if(DESTINATION==[0,0]):
             break
 
