@@ -30,9 +30,9 @@ def get_map_from_distances(distance):
     points = get_points_from_distances(distance)
     map = np.zeros((100,100))
     map[50][0] = 2
-    i=0
     for i in points:
         map[i[0]][i[1]]=1    
+    i=0
 
     while(i<len(points) - 1):
         point1 = points[i]
