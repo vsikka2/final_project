@@ -182,11 +182,11 @@ def astar(array):
                 if 0 <= neighbor[1] < array.shape[1]:                
                     invalid = 0
                     if(current[0] == neighbor[0]):
-                        for nodes in range(-int(MIN_MOVE_DISTANCE/2),int(MIN_MOVE_DISTANCE/2)):
+                        for nodes in range(int(MIN_MOVE_DISTANCE)):
                             if(array[nodes][neighbor[1]] == 1):
                                 invalid = 1
                     if(current[1] == neighbor[1]):
-                        for nodes in range(-int(MIN_MOVE_DISTANCE/2),int(MIN_MOVE_DISTANCE/2)):
+                        for nodes in range(int(MIN_MOVE_DISTANCE)):
                             if(array[neighbor[0]][nodes] == 1):
                                 invalid = 1
                     if invalid:
