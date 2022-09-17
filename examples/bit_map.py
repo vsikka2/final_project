@@ -105,7 +105,12 @@ def getMap(right):
             scan_map.append(dist)        
     m = get_map_from_distances(scan_map)
     m = np.array(m, dtype = int)
-    return m
+
+    map = np.zeros((10,10))
+    for i in len(m):
+        for j in len(m[0]):
+            map[i//10][j//10] +=m[i][j]
+    return map
 def heuristic(a, b):
     return np.sqrt((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2)
 
@@ -268,9 +273,9 @@ def main():
         if(path is None):
             print("Path does not exist")
             break
-        facing = traverse_path(path,facing)
-        if(DESTINATION==[0,0]):
-            break
+        #facing = traverse_path(path,facing)
+        #if(DESTINATION==[0,0]):
+        #    break
 
         
 if __name__ == "__main__":
