@@ -16,7 +16,7 @@ def get_points_from_distances(distance2):
 
     distance =[]
     for i in distance2:
-        distance.append(i-10)
+        distance.append(i)
     points = []
     cur_angle = -90
     i=0
