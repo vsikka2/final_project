@@ -261,11 +261,14 @@ def main():
         bit_map = getMap(right)
         right*=-1
         path = astar(bit_map)
-        facing = traverse_path(path,facing)
         for x in bit_map:
              for y in x:
                  print(y,end='',sep='')
              print()
+        if(path is None):
+            print("Path does not exist")
+            break
+        facing = traverse_path(path,facing)
         if(DESTINATION==[0,0]):
             break
 
