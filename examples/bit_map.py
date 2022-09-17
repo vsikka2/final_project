@@ -126,7 +126,6 @@ def local_destination():
     slope = (local[1]-CAR_START[1])/(local[0]-CAR_START[0])
     y_for_x_100 = int(slope*49)
     x_for_y_100 = int(99.0/slope+50)
-    print(slope)
     if(x_for_y_100 <100 and x_for_y_100 >=0):
         return [x_for_y_100,99]
     elif(y_for_x_100>0):
@@ -252,12 +251,15 @@ def main():
         bit_map = getMap(right)
         right*=-1
         path = astar(bit_map)
+        print(path)
         traverse_path(path)
         # for x in bit_map:
         #     for y in x:
         #         print(y,end='',sep='')
         #     print()
         # break
+        if(DESTINATION==[0,0]):
+            break
 
         
 if __name__ == "__main__":
