@@ -166,7 +166,7 @@ def astar(array):
             data.reverse()
             path=[]
             for i in range(0,CAMERA_RESCAN_DIST,MIN_MOVE_DISTANCE):
-                if(i <len(data)):
+                if( i/MIN_MOVE_DISTANCE <len(data)):
                     path.append(data[i])
             return path
         close_set.add(current)
@@ -212,9 +212,9 @@ def astar(array):
 
                 heapq.heappush(oheap, (fscore[neighbor], neighbor)) 
 
-def traverse_path(path):
+
+def traverse_path(path,facing):
     cur_location = CAR_START
-    facing = 1
     #facing 0 is left 1 is front 2 is right 3 is back
     for i in path:
         cur_movement = 0
@@ -245,15 +245,16 @@ def traverse_path(path):
         sleep(1)
         fc.stop()
         cur_location = i
-    
+    return facing
 def main():
     setCameraPos();    
     right = -1
+    facing = 1
     while True:
         bit_map = getMap(right)
         right*=-1
         path = astar(bit_map)
-        traverse_path(path)
+        facing = traverse_path(path,facing)
         # for x in bit_map:
         #     for y in x:
         #         print(y,end='',sep='')
