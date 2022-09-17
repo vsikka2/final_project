@@ -223,8 +223,9 @@ def astar(array):
                 heapq.heappush(oheap, (fscore[neighbor], neighbor)) 
 
 
-def traverse_path(path,facing):
+def traverse_path(path,absolute_direction):
     cur_location = CAR_START
+    facing = 1
     #facing 0 is left 1 is front 2 is right 3 is back
     for i in path:
         cur_movement = 0
@@ -233,10 +234,11 @@ def traverse_path(path,facing):
                 fc.forward(-5)
                 sleep(0.5)
                 fc.turn_right(speed)
-                sleep(2)
-            facing = 2
+                sleep(2)    
+                absolute_direction+=1
+            facing += 1
             cur_movement = i[0]-cur_location[0]
-            DESTINATION[0] -=cur_movement
+            
             fc.forward(cur_movement)
             sleep(0.5)
             fc.stop()
@@ -248,34 +250,42 @@ def traverse_path(path,facing):
                 sleep(0.5)
         
                 fc.turn_left(speed)
+                absolute_direction-=1
                 sleep(2)
-            facing = 0
+            facing -=1
             cur_movement = cur_location[0] - i[0]  
-            DESTINATION[0] +=cur_movement
             fc.forward(cur_movement)
             sleep(0.5)
             fc.stop()
         else:
             if(facing == 2):
                 fc.turn_left(speed)
+                absolute_direction-=1
             if(facing == 0):
                 fc.turn_right(speed)
-            facing = 1
+                absolute_direction+=1
             cur_movement = i[1]-cur_location[1]
-            DESTINATION[1] -=cur_movement
             fc.forward(cur_movement)
             sleep(0.5)
             fc.stop()
+        if(absolute_direction == 0):
+            DESTINATION[0] -=cur_movement
+        if(absolute_direction == 1):
+            DESTINATION[1] -=cur_movement
+        if(absolute_direction == 2):
+            DESTINATION[0] +=cur_movement
+            
         cur_location = i
-    return facing
+    return absolute_direction
 def main():
     setCameraPos();    
     right = -1
-    facing = 1
+    absolute_direction = 1
     while True:
         bit_map = getMap(right)
         right*=-1
         path = astar(bit_map)
+        
         if(path):
             cur_loc = CAR_START
             for i in path:
@@ -299,7 +309,7 @@ def main():
             break
         else:
             print(path)
-        facing = traverse_path(path,facing)
+        absolute_direction = traverse_path(path,absolute_direction)
         if(DESTINATION==[0,0]):
             break
 
