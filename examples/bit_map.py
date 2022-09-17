@@ -277,7 +277,7 @@ def traverse_path(path,absolute_direction):
             DESTINATION[0] +=cur_movement
             
         cur_location = i
-        print("Absolute Destination is "+str(DESTINATION))
+        print("Absolute Destination is "+str(DESTINATION) + "absolute direction is "+str(absolute_direction))
     return absolute_direction
 def main():
     setCameraPos();    
