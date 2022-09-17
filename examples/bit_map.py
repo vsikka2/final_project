@@ -8,7 +8,7 @@ np.set_printoptions(threshold = sys.maxsize)
 speed = 30
 ANGLE_STEP = 10
 CAR_START = [50,0]
-MIN_DISTANCE_LINE = 25
+MIN_DISTANCE_LINE = 120
 DESTINATION = [0,80]
 MIN_MOVE_DISTANCE = 1
 CAMERA_RESCAN_DIST = 10
@@ -31,12 +31,8 @@ def get_map_from_distances(distance):
     map = np.zeros((100,100))
     map[50][0] = 2
     i=0
-    
-    for x in map:
-        for y in x:
-            print(y,end='',sep='')
-        print()
-        
+    for i in points:
+        map[i[0]][i[1]]=1    
 
     while(i<len(points) - 1):
         point1 = points[i]
