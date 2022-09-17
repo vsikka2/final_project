@@ -31,7 +31,7 @@ def get_points_from_distances(distance2):
     return points
 def get_map_from_distances(distance):
     points = get_points_from_distances(distance)
-    map = np.zeros((100,100))
+    map = np.zeros((101,101))
     map[50][0] = 2
     for i in points:
         map[i[0]][i[1]]=1    
