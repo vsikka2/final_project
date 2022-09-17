@@ -171,6 +171,8 @@ def astar(array):
             for i in range(int(CAMERA_RESCAN_DIST/MIN_MOVE_DISTANCE)):
                 if( i <len(data)):
                     path.append(data[i])
+            print("A* search start is "+start +" end is "+goal + " path is = "+path)
+
             return path
         close_set.add(current)
         for i, j in neighbors:
@@ -275,7 +277,7 @@ def traverse_path(path,absolute_direction):
             DESTINATION[0] +=cur_movement
             
         cur_location = i
-        print(DESTINATION)
+        print("Absolute Destination is "+DESTINATION)
     return absolute_direction
 def main():
     setCameraPos();    
