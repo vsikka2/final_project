@@ -165,8 +165,9 @@ def astar(array):
                 current = came_from[current]
             data.reverse()
             path=[]
-            for i in range(0,CAMERA_RESCAN_DIST,MIN_MOVE_DISTANCE):
-                if( i/MIN_MOVE_DISTANCE <len(data)):
+            for i in range(0,CAMERA_RESCAN_DIST/MIN_MOVE_DISTANCE):
+                
+                if( i <len(data)):
                     path.append(data[i])
             return path
         close_set.add(current)
