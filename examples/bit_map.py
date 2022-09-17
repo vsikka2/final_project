@@ -120,7 +120,7 @@ def local_destination(absolute_direction):
         local = [local[1],-local[0]]
     if(absolute_direction==2):
         local=[-local[1],local[0]]
-    
+    print("Local Destination is "+str(local))
     if(local[0]<100 and local[1]<100 and local[0]>=0 and local[1]>=0):
         return local
     if(local[1]-CAR_START[1] == 0):
