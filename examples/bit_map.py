@@ -109,7 +109,7 @@ def getMap(right):
     map = np.zeros((10,10))
     for i in range(len(m)):
         for j in range(len(m[0])):
-            if(map[i][j] == 1):
+            if(m[i][j] == 1):
                 map[i//10][j//10] =1
     map = np.array(map, dtype = int)
     return map
