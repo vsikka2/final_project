@@ -249,8 +249,6 @@ def traverse_path(path,absolute_direction):
             cur_movement = i[0]-cur_location[0]
             
             fc.forward(cur_movement)
-            sleep(0.5)
-            fc.stop()
     
         if(i[0]-cur_location[0]<0):
             
@@ -265,8 +263,6 @@ def traverse_path(path,absolute_direction):
                 facing -=1
             cur_movement = cur_location[0] - i[0]  
             fc.forward(cur_movement)
-            sleep(0.5)
-            fc.stop()
         if(i[1]-cur_location[1]>0):
             if(facing == 2):
                 fc.turn_left(speed)
@@ -283,10 +279,15 @@ def traverse_path(path,absolute_direction):
             facing=1
         if(absolute_direction == 0):
             DESTINATION[0] -=cur_movement
+            sleep(1)
+            fc.stop()
+
         if(absolute_direction == 1):
             DESTINATION[1] -=cur_movement
         if(absolute_direction == 2):
             DESTINATION[0] +=cur_movement
+            sleep(1)
+            fc.stop()
             
         cur_location = i
         print("Absolute Destination is "+str(DESTINATION) + "absolute direction is "+str(absolute_direction))
