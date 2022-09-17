@@ -250,7 +250,7 @@ def main():
     while True:
         #bit_map = getMap(right)
         #right*=-1
-        fc.turn_left(speed)
+        fc.turn_right(speed)
 
         # path = astar(bit_map)
         # print(path)
