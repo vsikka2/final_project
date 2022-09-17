@@ -12,8 +12,8 @@ def main():
         print(tmp)
         if tmp != [2,2,2,2]:
             fc.turn_right(speed)
-        else:
-            fc.forward(speed)
+        #else:
+        #    fc.forward(speed)
 
 if __name__ == "__main__":
     try: 
