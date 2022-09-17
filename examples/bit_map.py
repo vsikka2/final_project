@@ -10,8 +10,8 @@ ANGLE_STEP = 10
 CAR_START = [50,0]
 MIN_DISTANCE_LINE = 120
 DESTINATION = [0,80]
-MIN_MOVE_DISTANCE = 10
-CAMERA_RESCAN_DIST = 50
+MIN_MOVE_DISTANCE = 5
+CAMERA_RESCAN_DIST = 25
 def get_points_from_distances(distance):
     points = []
     cur_angle = -90
