@@ -180,11 +180,17 @@ def astar(array):
             if 0 <= neighbor[0] < array.shape[0]:
 
                 if 0 <= neighbor[1] < array.shape[1]:                
-
-                    if array[neighbor[0]][neighbor[1]] == 1:
-
+                    invalid = 0
+                    if(current[0] == neighbor[0]):
+                        for nodes in range(1,11):
+                            if(array[nodes][neighbor[1]] == 1):
+                                invalid = 1
+                    if(current[1] == neighbor[1]):
+                        for nodes in range(1,11):
+                            if(array[neighbor[0]][nodes] == 1):
+                                invalid = 1
+                    if invalid:
                         continue
-
                 else:
                     
                     # array bound y walls
