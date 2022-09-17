@@ -313,7 +313,7 @@ def main():
         if(path is None):
             #print("Path does not exist")
             break
-        else:
+        #else:
             #print(path)
         for x in m:
             for y in x:
