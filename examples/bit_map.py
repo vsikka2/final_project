@@ -240,8 +240,6 @@ def traverse_path(path,absolute_direction):
         if(i[0]-cur_location[0]>0):
             if(facing == 1):
 
-                fc.forward(-5)
-                sleep(1)
                 fc.turn_right(speed)
                 sleep(2)    
                 absolute_direction+=1
@@ -253,9 +251,6 @@ def traverse_path(path,absolute_direction):
         if(i[0]-cur_location[0]<0):
             
             if(facing == 1):
-
-                fc.forward(-5)
-                sleep(1)
         
                 fc.turn_left(speed)
                 absolute_direction-=1
