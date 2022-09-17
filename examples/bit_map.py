@@ -276,6 +276,7 @@ def traverse_path(path,absolute_direction):
             DESTINATION[0] +=cur_movement
             
         cur_location = i
+        print(DESTINATION)
     return absolute_direction
 def main():
     setCameraPos();    
@@ -300,10 +301,6 @@ def main():
                         bit_map[j][i[1]] = 2
                 
                 cur_loc=i
-        for x in bit_map:
-             for y in x:
-                 print(y,end='',sep='')
-             print()
         if(path is None):
             print("Path does not exist")
             break
