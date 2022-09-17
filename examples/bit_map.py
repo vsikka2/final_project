@@ -126,11 +126,11 @@ def local_destination(absolute_direction):
         return local
     if(local[1]-CAR_START[1] == 0):
         if(local[0]-CAR_START[0]>0):
-            return [99,CAR_START[1]]
+            return [100,CAR_START[1]]
         if(local[0]-CAR_START[0]<0):
             return [0,CAR_START[1]]
     if(local[0]-CAR_START[0]==0):
-        return [50,99]
+        return [50,100]
     
     slope = (local[1]-CAR_START[1])/(local[0]-CAR_START[0])
     y_for_x_100 = int(slope*49)
@@ -138,7 +138,7 @@ def local_destination(absolute_direction):
     if(x_for_y_100 <100 and x_for_y_100 >=0):
         return [x_for_y_100,99]
     elif(y_for_x_100>0):
-        return [99,y_for_x_100]
+        return [100,y_for_x_100]
     else:
         return [0,-y_for_x_100]
     return local
