@@ -16,18 +16,17 @@ def send_to_telegram(message):
 
     try:
         response = requests.post(apiURL, json={'chat_id': chatID, 'text': message})
-        print(response.text)
     except Exception as e:
-        print(e)
+        a=1
 
 
 def main():
     while True:
         dist = fc.get_distance_at(90)
         if(dist!=-2):
-            print(dist)
-            send_to_telegram(dist)
-        sleep(5)
+#            print(dist)
+            send_to_telegram("Movement detected")
+            sleep(60)
 
         
 if __name__ == "__main__":
