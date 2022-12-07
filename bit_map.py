@@ -8,17 +8,17 @@ import requests
 
 TELEGRAM_SENDER_API_TOKEN = ''
 
-def send_to_telegram(message):
+# def send_to_telegram(message):
 
-    apiToken = TELEGRAM_SENDER_API_TOKEN
-    chatID = '515382482'
-    apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
+#     apiToken = TELEGRAM_SENDER_API_TOKEN
+#     chatID = '515382482'
+#     apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
 
-    try:
-        response = requests.post(apiURL, json={'chat_id': chatID, 'text': message})
-        print(response.text)
-    except Exception as e:
-        print(e)
+#     try:
+#         response = requests.post(apiURL, json={'chat_id': chatID, 'text': message})
+#         print(response.text)
+#     except Exception as e:
+#         print(e)
 
 
 def main():
