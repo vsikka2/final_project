@@ -24,9 +24,8 @@ def main():
     while True:
         dist = fc.get_distance_at(90)
         if(dist!=-2):
-#            print(dist)
             send_to_telegram("Movement detected")
-            sleep(60)
+            sleep(5)
 
         
 if __name__ == "__main__":
