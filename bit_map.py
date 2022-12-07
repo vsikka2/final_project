@@ -26,7 +26,7 @@ def main():
         dist = fc.get_distance_at(90)
         if(dist!=-2):
             print(dist)
-            send_to_telegram("message")
+            #send_to_telegram("message")
         sleep(5)
 
         
