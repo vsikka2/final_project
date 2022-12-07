@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from picar_4wd.pin import Pin
 from picar_4wd.ultrasonic import Ultrasonic 
+import time
 
 us = Ultrasonic(Pin('D8'), Pin('D9'))
 

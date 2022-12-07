@@ -6,19 +6,19 @@ import heapq
 from time import sleep
 import requests
 
-TELEGRAM_SENDER_API_TOKEN = ''
+TELEGRAM_SENDER_API_TOKEN = '5842961554:AAE9wr_AZxrM2EongXw8T7ayEsvzptmLmC0'
 
-# def send_to_telegram(message):
+def send_to_telegram(message):
 
-#     apiToken = TELEGRAM_SENDER_API_TOKEN
-#     chatID = '515382482'
-#     apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
+    apiToken = TELEGRAM_SENDER_API_TOKEN
+    chatID = '246452512'
+    apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
 
-#     try:
-#         response = requests.post(apiURL, json={'chat_id': chatID, 'text': message})
-#         print(response.text)
-#     except Exception as e:
-#         print(e)
+    try:
+        response = requests.post(apiURL, json={'chat_id': chatID, 'text': message})
+        print(response.text)
+    except Exception as e:
+        print(e)
 
 
 def main():
@@ -26,12 +26,10 @@ def main():
         dist = fc.get_distance_at(90)
         if(dist!=-2):
             print(dist)
-            #send_to_telegram("message")
+            send_to_telegram(dist)
         sleep(5)
 
         
 if __name__ == "__main__":
     try: 
         main()
-    finally: 
-        fc.stop()
